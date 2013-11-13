@@ -93,6 +93,9 @@ syn match perlStatementMisc		"\<\%(warn\|formline\|reset\|scalar\|prototype\|loc
 
 syn keyword perlTodo			TODO TBD FIXME XXX contained
 
+" mop keywords
+syn match perlStatementMop		"\<\%(class\|has\|method\|is\|new\)\>"
+
 syn region perlStatementIndirObjWrap	matchgroup=perlStatementIndirObj start="\<\%(map\|grep\|sort\|print\|system\|exec\)\>\s*{" end="}" contains=@perlTop,perlGenericBlock
 
 syn match perlLabel      "^\s*\h\w*\s*::\@!\%(\<v\d\+\s*:\)\@<!"
@@ -120,6 +123,9 @@ syn match  perlVarSlash		 "$/"
 
 " And plain identifiers
 syn match  perlPackageRef	 "[$@#%*&]\%(\%(::\|'\)\=\I\i*\%(\%(::\|'\)\I\i*\)*\)\=\%(::\|'\)\I"ms=s+1,me=e-1 contained
+
+" twigils, for mop
+syn match perlVarPlain           "$![a-z1-9_]*"
 
 " To not highlight packages in variables as a scope reference - i.e. in
 " $pack::var, pack:: is a scope, just set "perl_no_scope_in_variables"
@@ -498,6 +504,8 @@ HiLink perlSpecialString	perlSpecial
 HiLink perlSpecialStringU	perlSpecial
 HiLink perlSpecialMatch		perlSpecial
 HiLink perlDATA			perlComment
+
+HiLink perlStatementMop         perlStatement
 
 " Possible errors
 HiLink perlNotEmptyLine		Error
