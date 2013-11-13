@@ -94,7 +94,7 @@ syn match perlStatementMisc		"\<\%(warn\|formline\|reset\|scalar\|prototype\|loc
 syn keyword perlTodo			TODO TBD FIXME XXX contained
 
 " mop keywords
-syn match perlStatementMop		"\<\%(class\|has\|method\|is\|new\)\>"
+syn match perlStatementMop		"\<\%(class\|has\|method\|is\|extends\|with\|new\)\>"
 
 syn region perlStatementIndirObjWrap	matchgroup=perlStatementIndirObj start="\<\%(map\|grep\|sort\|print\|system\|exec\)\>\s*{" end="}" contains=@perlTop,perlGenericBlock
 
